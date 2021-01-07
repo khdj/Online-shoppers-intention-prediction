@@ -1,0 +1,7 @@
+pip install django
+pip install scikit-learn
+pip install pandas
+pip install enum
+pip install rest_framework
+pip install pickle
+pip install numpy
