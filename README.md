@@ -6,7 +6,7 @@ _Nous avons travaillé sur le dataset Online Shoppers Purchasing Intention qui a
 Engineering and Natural Sciences) et Yomi Kastro
 (Inveon Information Technologies Consultancy and Trade)._ \
 _Ce dataset présente des sessions Internet (interaction entre un site ou une application et un visiteur ayant chargé au moins une page)._ \
-_En plus de différentes informations sur la session (exemples : région géographique, mois de visite, etc.), nous savons également si la session a abouti à un achat ou non._ \
+_En plus de différentes informations sur la session (exemples : région géographique, mois de visite, etc.), nous savons également si la session a abouti à un achat ou non._ 
 
 ## Problématique
 _A partir des informations sur une session Internet, nous cherchons à prévoir si le visiteur va effectuer ou non un achat au cours de la session ouverte._
