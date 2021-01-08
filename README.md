@@ -55,3 +55,8 @@ Cliquer sur Body >> JSON et entrer les paramètres désirés, sous la forme suiv
 
 Pour rappel, seules 15% des sessions de notre dataset aboutissent à un achat.\
 Ainsi, dans la majorité des cas, le modèle prédit que le visiteur n'effectuera pas de transaction. Pour obtenir une prédiction positive, essayez saisir les informations d'une session pour laquelle le champ Revenue est à True dans le dataset fourni : online_shoppers_intention.csv.
+
+## Auteures
+
+> Khadidiatou BADJI\
+> Vayshnavi SIVARAJAH
