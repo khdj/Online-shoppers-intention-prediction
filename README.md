@@ -1,14 +1,17 @@
 # Intentions d'achats en ligne
 _Projet Python visant à créer un modèle d'apprentissage automatique pour prédire **l'intention des acheteurs en ligne**, ainsi qu'une API Django._
 
+## Contexte
 _Nous avons travaillé sur le dataset Online Shoppers Purchasing Intention qui a été créé par C. Okan Sakar (Department of Computer Engineering, Faculty of
 Engineering and Natural Sciences) et Yomi Kastro
 (Inveon Information Technologies Consultancy and Trade)._ \
 _Ce dataset présente des sessions Internet (interaction entre un site ou une application et un visiteur ayant chargé au moins une page)._ \
 _En plus de différentes informations sur la session (exemples : région géographique, mois de visite, etc.), nous savons également si la session a abouti à un achat ou non._ \
-_A partir des informations sur une session Internet,
-nous cherchons à prévoir si le visiteur va effectuer ou non un achat au cours de la session ouverte._
 
+## Problématique
+_A partir des informations sur une session Internet, nous cherchons à prévoir si le visiteur va effectuer ou non un achat au cours de la session ouverte._
+
+## Résultats
 _Après avoir testé sur notre dataset différents modèles (KNeighbors Classifier, C-Support Vector Classification, Gradient Boosting Classifier et Random Forest), nous avons conclu que le modèle le plus performant est le Gradient Boosting Classifier qui donne un score de 0.85._ \
 _Le meilleur modèle final est donc le Gradient Boosting Classifier (CLF) appelé avec les paramètres suivants :_
 
@@ -22,6 +25,8 @@ _Le meilleur modèle final est donc le Gradient Boosting Classifier (CLF) appel�
 _Ce que nous remarquons en observant les matrices de confusion, c'est que dû à la faible proportion des "Revenue = True" dans le dataset, les prédictions sont plutôt médiocres quand "Revenue = True". Ce phénomène se manifeste sur tous les modèles testés._
 
 _Ensuite, nous avons créé un API sur Django, permettant de prédire si une session aboutira à un achat ou non avec les paramètres entrés par l'utilisateur._
+
+## Instructions
 
 Pour commencer veuillez télécharger le dossier zip Online-shoppers-intention-prediction-master, fourni sur github et le dézipper.
 
