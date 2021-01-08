@@ -4,8 +4,8 @@ import numpy as np
 from django.http import HttpResponse
 from django.http import JsonResponse
 from rest_framework.parsers import JSONParser
-from .models import OnlineShoppersIntentions
-from .serializers import OnlineShoppersIntentionsSerializer
+from .models import OnlineShopper
+from .serializers import OnlineShopperSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 import pandas as pd
@@ -13,14 +13,14 @@ from .field_choices import MonthNumber, VisitorTypeNumber
 
 
 @api_view(['GET', 'POST'])
-def intention_list(request):
+def shoppers_list(request):
     if request.method == 'GET':
-        intentions = OnlineShoppersIntentions.objects.all()
-        serializer = OnlineShoppersIntentionsSerializer(intentions, many=True)
+        intentions = OnlineShopper.objects.all()
+        serializer = OnlineShopperSerializer(intentions, many=True)
         return Response(serializer.data)
     elif request.method == 'POST':
         data = JSONParser().parse(request)
-        serializer = OnlineShoppersIntentionsSerializer(data=data)
+        serializer = OnlineShopperSerializer(data=data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=201)
@@ -28,18 +28,18 @@ def intention_list(request):
 
 
 @api_view(['GET', 'PUT', 'DELETE'])
-def intention_detail(request, pk):
+def shopper_detail(request, pk):
     try:
-        intention = OnlineShoppersIntentions.objects.get(pk=pk)
-    except OnlineShoppersIntentions.DoesNotExist:
+        intention = OnlineShopper.objects.get(pk=pk)
+    except OnlineShopper.DoesNotExist:
         return HttpResponse(status=404)
 
     if request.method == 'GET':
-        serializer = OnlineShoppersIntentionsSerializer(intention)
+        serializer = OnlineShopperSerializer(intention)
         return Response(serializer.data)
     elif request.method == 'PUT':
         data = JSONParser().parse(request)
-        serializer = OnlineShoppersIntentionsSerializer(intention, data=data)
+        serializer = OnlineShopperSerializer(intention, data=data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)

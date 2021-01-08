@@ -2,7 +2,7 @@ from django.db import models
 from .field_choices import *
 
 
-class OnlineShoppersIntentions(models.Model):
+class OnlineShopper(models.Model):
     Administrative = models.IntegerField()  # administrative pages visited
     AdministrativeDuration = models.FloatField()
     Informational = models.IntegerField()

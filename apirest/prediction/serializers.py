@@ -1,10 +1,10 @@
 from rest_framework import serializers
 
-from .models import OnlineShoppersIntentions
+from .models import OnlineShopper
 from .field_choices import *
 
 
-class OnlineShoppersIntentionsSerializer(serializers.Serializer):
+class OnlineShopperSerializer(serializers.Serializer):
 
     Administrative = serializers.IntegerField()  # administrative pages visited
     AdministrativeDuration = serializers.FloatField()   #time spent on administrative pages
@@ -23,7 +23,7 @@ class OnlineShoppersIntentionsSerializer(serializers.Serializer):
 
     def create(self, validated_data):
         """Create and return a new `OnlineShoppersIntentions` instance, given the validated data."""
-        return OnlineShoppersIntentions.objects.create(**validated_data)
+        return OnlineShopper.objects.create(**validated_data)
 
     def update(self, instance, validated_data):
         pass
