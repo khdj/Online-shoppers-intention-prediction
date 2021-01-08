@@ -49,7 +49,6 @@ def shopper_detail(request, pk):
         return HttpResponse(status=204)
 
 
-# à voir si on peut la mettre ailleurs cette fonction
 def preprocess_data(data):
     data['Month'] = MonthNumber[data["Month"]].value
     data['VisitorType'] = VisitorTypeNumber[data["VisitorType"]].value
@@ -70,7 +69,7 @@ def buy_or_not_buy(request):
         shaped_data = preprocess_data(request.data)
 
         y_pred = mdl.predict(shaped_data)
-        y_pred_proba = mdl.predict_proba(shaped_data)[0][0]
+        y_pred_proba = np.around(mdl.predict_proba(shaped_data)[0][0], decimals=2)
 
         df = pd.DataFrame([[y_pred, y_pred_proba]], columns=['Revenue', 'Certainty'])
         df = df.replace({True: 'Transaction', False: 'No transaction'})
