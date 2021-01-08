@@ -1,6 +1,20 @@
 # Intentions d'achats en ligne
 _Projet Python visant à créer un modèle d'apprentissage automatique pour prédire **l'intention des acheteurs en ligne**, ainsi qu'une API Django._
 
+_Après avoir testé sur notre dataset différents modèles (KNeighbors Classifier, C-Support Vector Classification, Gradient Boosting Classifier et Random Forest), nous avons conclu que le modèle le plus performant est le Gradient Boosting Classifier qui donne un score de 0.85._ \
+_Le meilleur modèle final est donc le Gradient Boosting Classifier (CLF) appelé avec les paramètres suivants :_
+
+- *learning_rate : 0.1*
+- *loss : deviance*
+- *max_depth: 5*
+- *min_samples_leaf: 2*
+- *min_samples_split: 3*
+- *n_estimators: 20*
+
+_Ce que nous remarquons en observant les matrices de confusion, c'est que dû à la faible proportion des "Revenue = True" dans le dataset, les prédictions sont plutôt médiocres quand "Revenue = True". Ce phénomène se manifeste sur tous les modèles testés._
+
+_Ensuite, nous avons créé un API sur Django, permettant de prédire si une session aboutira à un achat ou non avec les paramètres entrés par l'utilisateur._
+
 Pour commencer veuillez télécharger le dossier zip Online-shoppers-intention-prediction-master, fourni sur github et le dézipper.
 
 ### Visualisation du notebook Python
@@ -10,7 +24,7 @@ Pour commencer veuillez télécharger le dossier zip Online-shoppers-intention-p
 **4.** Vous pouvez visualiser le notebook.\
 **5.** Vous pouvez également visualiser le fichier "Online-shoppers-intention.html" en l'ouvrant directement depuis le dossier.
 
-### Installation de l'API
+### Mise en place de l'API
 **1.** Ouvrir PyCharm.\
 **2.** Ouvrir le dossier Online-shoppers-intention-prediction-master dans PyCharm.\
 **3.** Ouvrir le fichier "requirements.txt".\
