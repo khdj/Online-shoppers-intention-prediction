@@ -16,9 +16,9 @@ _Après avoir testé sur notre dataset différents modèles (KNeighbors Classifi
 _Le meilleur modèle final est donc le Gradient Boosting Classifier (CLF) appelé avec les paramètres suivants :_
 
 - *learning_rate : 0.1*
-- *loss : deviance*
-- *max_depth: 5*
-- *min_samples_leaf: 2*
+- *loss : exponential*
+- *max_depth: 8*
+- *min_samples_leaf: 3*
 - *min_samples_split: 3*
 - *n_estimators: 20*
 
